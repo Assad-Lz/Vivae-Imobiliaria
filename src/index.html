@@ -3,15 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Imobiliária de Alto Padrão</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Construtora Vivae</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <img
+          src="global/Captura_de_tela_2025-02-08_091953-removebg-preview.png"
+        />
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#about">Sobre Nós</a></li>
+          <li><a href="#gallery">Galeria</a></li>
+          <li><a href="#properties">Imóveis</a></li>
+          <li><a href="#location">Localização</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
       class="hero-section"
       data-aos="fade-up"
       data-aos-duration="1000"
@@ -34,13 +58,128 @@
           Explore Agora
         </button>
       </div>
-    </div>
-
-    <section id="properties" class="properties-section">
-      <h2>Nossas Propriedades</h2>
-      <p>Confira nossos empreendimentos exclusivos.</p>
     </section>
 
+    <!-- Sobre Nós -->
+    <section id="about" class="about-section">
+      <div class="about-content" data-aos="fade-right">
+        <h2>Sobre Nós</h2>
+        <p>
+          Bem-vindo à Vivae, uma construtora que transforma sonhos em realidade.
+          Fundada em 2010 por Ana Clara e Ricardo Monteiro, a Vivae surgiu da
+          paixão por criar espaços que não apenas atendam às necessidades
+          funcionais, mas que também inspirem e encantem seus moradores. Desde o
+          início, nossa missão tem sido redefinir o conceito de habitação,
+          combinando inovação, sustentabilidade e design de excelência. Com uma
+          equipe diversificada e altamente qualificada de arquitetos,
+          engenheiros e designers, a Vivae se destaca por seu compromisso em
+          entregar projetos únicos e personalizados. Em cada empreendimento,
+          priorizamos o uso de materiais ecológicos e técnicas de construção que
+          minimizam o impacto ambiental.
+        </p>
+      </div>
+      <div class="about-image" data-aos="fade-left">
+        <img
+          src="global/jovem-engenheiro-civil-com-chapeu-de-seguranca_185193-110842.jpg"
+          alt="Sobre Nós"
+        />
+      </div>
+    </section>
+
+    <!-- Galeria de Fotos -->
+    <section id="gallery" class="gallery-section">
+      <h2>Galeria</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item" data-aos="zoom-in">
+          <img src="global/modern-luxury-villa-design.jpg" alt="Imagem 1" />
+        </div>
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+          <img
+            src="global/luxury-architecture-exterior-design.jpg"
+            alt="Imagem 2"
+          />
+        </div>
+        <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+          <img
+            src="global/beautiful-tropical-beach-front-hotel-resort-with-swimming-pool-paradise-destination-vacations-ge.jpg"
+            alt="Imagem 3"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards de Imóveis à Venda -->
+    <section id="properties" class="properties-section">
+      <h2>Imóveis à Venda</h2>
+      <div class="properties-grid">
+        <div class="property-card" data-aos="fade-up">
+          <img src="global/piscina-no-resort_1150-10729.jpg" alt="Imóvel 1" />
+          <h3>Residência Luxuosa Rivieira de São Lourenço</h3>
+          <p>4 quartos, 3 banheiros, 400m²</p>
+          <button class="cta-button">Saiba Mais</button>
+        </div>
+        <div class="property-card" data-aos="fade-up" data-aos-delay="200">
+          <img src="global/imovel-de-alto-padrao-1024x680.png" alt="Imóvel 2" />
+          <h3>Residência Luxuosa Alphaville</h3>
+          <p>8 quartos, 6 banheiros, 1900m²</p>
+          <button class="cta-button">Saiba Mais</button>
+        </div>
+        <div class="property-card" data-aos="fade-up" data-aos-delay="400">
+          <img
+            src="global/b2ap3_medium_Abre---Imveis-alto-padro.jpg"
+            alt="Imóvel 3"
+          />
+          <h3>Residência Luxuosa Morumbi</h3>
+          <p>4 quartos, 4 banheiros, 300m²</p>
+          <button class="cta-button">Saiba Mais</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Localização com Iframe e Foto da Fachada -->
+    <section id="location" class="location-section">
+      <div class="location-content" data-aos="fade-right">
+        <h2>Nossa Localização</h2>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.075426745292!2d-46.65342658440729!3d-23.565734367638635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1633023226784!5m2!1spt-BR!2sbr"
+          width="100%"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div class="location-image" data-aos="fade-left">
+        <img
+          src="global/arquitetura-moderna-de-apartamentos_1268-14696.avif"
+          alt="Fachada"
+        />
+      </div>
+    </section>
+
+    <section class="lead-form-section">
+      <div class="lead-form-container">
+        <h2>Receba nossas novidades!</h2>
+        <p>
+          Cadastre-se para receber informações exclusivas sobre nossos imóveis.
+        </p>
+        <form class="lead-form">
+          <input type="text" placeholder="Nome completo" required />
+          <input type="email" placeholder="Seu e-mail" required />
+          <input type="tel" placeholder="Telefone (opcional)" />
+          <textarea placeholder="Mensagem (opcional)"></textarea>
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <p>&copy; 2025 Construtora Vivae. Todos os direitos reservados.</p>
+      <p>Desenvolvido com ❤️ por Yssaky Assad Luz</p>
+    </footer>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="script.js"></script>
   </body>

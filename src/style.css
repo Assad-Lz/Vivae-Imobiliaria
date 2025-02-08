@@ -1,11 +1,57 @@
 /* Estilos gerais */
 body {
   margin: 0;
-  font-family: "Arial", sans-serif;
+  font-family: "Poppins", serif;
   color: white;
 }
 
-/* Seção Hero */
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background: #000000;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  margin: 0;
+  width: 150px;
+  height: 90px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding-right: 2.7rem;
+}
+
+.nav ul li {
+  margin-left: 20px;
+}
+
+/* Hover nos Links do Header */
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+/* Efeito Hover com Degradê */
+.nav ul li a:hover {
+  background: linear-gradient(45deg, rgb(112, 238, 58), rgb(51, 176, 6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hero Section */
 .hero-section {
   position: relative;
   height: 100vh;
@@ -24,7 +70,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background-image: url(global/textura-poligonal-metalica-dourada_1409-1108.avif);
+  background-size: cover;
+  opacity: 0.7;
 }
 
 .hero-content {
@@ -34,18 +82,20 @@ body {
 .animated-text {
   font-size: 4rem;
   animation: float 3s ease-in-out infinite;
+  color: black;
 }
 
 .subtitle {
   font-size: 1.5rem;
   margin-top: 20px;
+  color: black;
 }
 
 .cta-button {
   padding: 15px 30px;
   font-size: 1rem;
   color: white;
-  background: #ff6f61;
+  background: #000000;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -53,7 +103,144 @@ body {
 }
 
 .cta-button:hover {
-  background: #ff3b2f;
+  background: linear-gradient(45deg, rgb(112, 238, 58), rgb(51, 176, 6));
+}
+
+/* Sobre Nós */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  background: #f9f9f9;
+  color: #333;
+  text-align: center;
+}
+
+.about-content {
+  flex: 1;
+  padding-right: 20px;
+  margin-top: -20px;
+}
+
+.about-image {
+  flex: 1;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  max-width: 500px;
+}
+
+@media (min-width: 768px) {
+  .about-section {
+    flex-direction: row;
+    align-items: center;
+  }
+  .about-content {
+    text-align: left;
+  }
+}
+
+/* Galeria */
+.gallery-section {
+  padding: 60px 20px;
+  background: #fff;
+  color: #333;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Imóveis à Venda */
+.properties-section {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  color: #333;
+  text-align: center;
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.property-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.property-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Localização */
+.location-section {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  background: #fff;
+  color: #333;
+  text-align: center;
+}
+
+.location-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.location-image {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.location-image img {
+  width: 100%;
+  border-radius: 10px;
+  max-width: 500px;
+}
+
+.location-content iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  margin-top: -30px; /* Move o iframe 30px para cima */
+}
+
+@media (min-width: 768px) {
+  .location-section {
+    flex-direction: row;
+    align-items: center;
+  }
+  .location-content {
+    text-align: left;
+  }
+}
+
+/* Rodapé */
+.footer {
+  padding: 20px;
+  background: #000000;
+  color: white;
+  text-align: center;
 }
 
 /* Animação de flutuação */
@@ -67,19 +254,73 @@ body {
   }
 }
 
-/* Seção de Propriedades */
-.properties-section {
+/* Formulário de Lead */
+.lead-form-section {
   padding: 60px 20px;
   background: #f9f9f9;
-  color: #333;
   text-align: center;
 }
 
-.properties-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+.lead-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.properties-section p {
-  font-size: 1.2rem;
+.lead-form-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.lead-form-container p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.lead-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.lead-form input,
+.lead-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.lead-form textarea {
+  border-radius: 10px;
+  resize: none;
+  height: 120px;
+}
+
+.lead-form button {
+  padding: 15px;
+  font-size: 1rem;
+  color: white;
+  background: #000000;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.lead-form button:hover {
+  background: linear-gradient(45deg, rgb(112, 238, 58), rgb(51, 176, 6));
+}
+
+@media (min-width: 768px) {
+  .lead-form-container {
+    padding: 40px;
+  }
 }
