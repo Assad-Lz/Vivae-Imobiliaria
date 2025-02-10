@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Estilos gerais */
 body {
   margin: 0;
@@ -5,50 +14,88 @@ body {
   color: white;
 }
 
-/* Header */
-.header {
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Estilos do header */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
-  background: #000000;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
+  padding: 20px;
+  background-color: #000000;
+  color: #fff;
+  position: relative; /* Para posicionar o menu corretamente */
 }
 
-.logo img {
-  margin: 0;
-  width: 150px;
+header .logo img {
   height: 90px;
 }
 
-.nav ul {
+nav ul {
   list-style: none;
   display: flex;
-  margin: 0;
-  padding-right: 2.7rem;
 }
 
-.nav ul li {
+nav ul li {
   margin-left: 20px;
 }
 
-/* Hover nos Links do Header */
-.nav ul li a {
-  color: white;
+nav ul li a {
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
-  position: relative;
 }
 
-/* Efeito Hover com Degradê */
-.nav ul li a:hover {
-  background: linear-gradient(45deg, rgb(112, 238, 58), rgb(51, 176, 6));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+nav ul li a:hover {
+  color: rgb(51, 176, 6);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Menu hambúrguer (ícone de três pontos) */
+.menu-toggle {
+  display: none; /* Escondido por padrão */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* Esconde o menu por padrão */
+    flex-direction: column;
+    background-color: #000000;
+    position: absolute;
+    top: 100%; /* Abre o menu abaixo do header */
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+  }
+
+  nav ul.active {
+    display: flex; /* Mostra o menu quando a classe "active" é adicionada */
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex; /* Mostra o ícone de três pontos em telas menores */
+  }
 }
 
 /* Hero Section */
@@ -70,7 +117,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(global/textura-poligonal-metalica-dourada_1409-1108.avif);
+  background-image: url(global/fundo-de-folha-de-ornamento-de-ouro_1409-1135.jpg);
   background-size: cover;
   opacity: 0.7;
 }
@@ -225,6 +272,9 @@ body {
   margin-top: -30px; /* Move o iframe 30px para cima */
 }
 
+.location-content h2 {
+  padding: 20px;
+}
 @media (min-width: 768px) {
   .location-section {
     flex-direction: row;
@@ -256,7 +306,7 @@ body {
 
 /* Formulário de Lead */
 .lead-form-section {
-  padding: 60px 20px;
+  padding: 40px 20px; /* Reduzi o padding para telas menores */
   background: #f9f9f9;
   text-align: center;
 }
@@ -265,19 +315,19 @@ body {
   max-width: 500px;
   margin: 0 auto;
   background: white;
-  padding: 30px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .lead-form-container h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 1.8rem; /* Tamanho menor para telas pequenas */
+  margin-bottom: 15px;
   color: #333;
 }
 
 .lead-form-container p {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Tamanho menor para telas pequenas */
   margin-bottom: 20px;
   color: #666;
 }
@@ -285,17 +335,18 @@ body {
 .lead-form {
   display: flex;
   flex-direction: column;
+  gap: 15px; /* Espaçamento entre os campos */
 }
 
 .lead-form input,
 .lead-form textarea {
   width: 100%;
-  padding: 15px;
-  margin-bottom: 15px;
+  padding: 12px; /* Padding menor para telas pequenas */
   border: 1px solid #ddd;
   border-radius: 50px;
   font-size: 1rem;
   outline: none;
+  box-sizing: border-box; /* Garante que padding não aumente a largura */
 }
 
 .lead-form textarea {
@@ -305,7 +356,7 @@ body {
 }
 
 .lead-form button {
-  padding: 15px;
+  padding: 12px; /* Padding menor para telas pequenas */
   font-size: 1rem;
   color: white;
   background: #000000;
@@ -319,8 +370,140 @@ body {
   background: linear-gradient(45deg, rgb(112, 238, 58), rgb(51, 176, 6));
 }
 
-@media (min-width: 768px) {
-  .lead-form-container {
-    padding: 40px;
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+  .lead-form-section {
+    padding: 20px 10px; /* Padding ainda menor para telas muito pequenas */
   }
+
+  .lead-form-container {
+    padding: 15px;
+  }
+
+  .lead-form-container h2 {
+    font-size: 1.5rem; /* Tamanho menor para telas pequenas */
+  }
+
+  .lead-form-container p {
+    font-size: 0.8rem; /* Tamanho menor para telas pequenas */
+  }
+
+  .lead-form input,
+  .lead-form textarea {
+    padding: 10px; /* Padding menor para telas pequenas */
+    font-size: 0.9rem; /* Fonte menor para telas pequenas */
+  }
+
+  .lead-form button {
+    padding: 10px; /* Padding menor para telas pequenas */
+    font-size: 0.9rem; /* Fonte menor para telas pequenas */
+  }
+}
+
+/* Sessão Morada Maresia */
+.morada-maresia-section {
+  display: flex;
+  flex-direction: column;
+  padding: 60px 20px;
+  background: #f9f9f9;
+  color: #000000;
+  text-align: center;
+}
+
+.morada-maresia-content {
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.morada-maresia-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.morada-maresia-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.price-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  color: #000000;
+}
+
+.price-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.price-card .price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(51, 176, 6);
+  margin-bottom: 20px;
+}
+
+.morada-maresia-image {
+  flex: 1;
+  text-align: center;
+}
+
+.morada-maresia-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px 100px;
+  height: 460px;
+}
+
+@media (min-width: 768px) {
+  .morada-maresia-section {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+  .morada-maresia-content {
+    margin-bottom: 0;
+    padding-right: 40px;
+  }
+}
+
+/* Sessão Banner Motivacional */
+.banner-section {
+  position: relative;
+  height: 400px;
+  background-image: url("global/civil-engineer-construction-worker-manager-holding-digital-tablet-blueprints-talking-planing-about-construction-site-cooperation-teamwork-concept.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.banner-content {
+  z-index: 1;
+}
+
+.banner-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
 }
