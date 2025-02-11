@@ -275,6 +275,7 @@ nav ul li a:hover {
 
 .location-content h2 {
   padding: 20px;
+  margin-bottom: 20px;
 }
 @media (min-width: 768px) {
   .location-section {
